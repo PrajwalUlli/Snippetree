@@ -41,9 +41,6 @@ class DualStreamLogger:
     def exception(self, message: str):
         self._log("exception", message)
 
-    def console(self, message: str):
-        self.console_logger.info(message)
-
 
 class DualStreamLoggerFactory:
     def __init__(self, file_handle: IO[str] | None = None):
