@@ -2,7 +2,8 @@
 from .create_logger import setup_logging  
 
 def divide(a, enable_log=False):  
-    # Setup logging based on the parameter  
+    # Setup logging based on the parameter
+    # You can also leave the file_path and it will create files based on which file called the logger import
     log = setup_logging(enable_log=enable_log, log_file_path="app.log")  
       
     log.info("Application started")
