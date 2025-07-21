@@ -2,7 +2,7 @@
 from rnet import BlockingClient, Cookie, Impersonate
 
 # Local Modules
-from src.core.Log.create_logger import setup_logging
+from Structlog.create_logger import setup_logging
 
 
 class Spider:
@@ -53,7 +53,7 @@ class Spider:
                 return response.json()
             # else:
             self.log.error("No response received: %s", url)
-            return {}  # noqa: TRY300
+            return {}
 
         except Exception:
             self.log.exception("Request failed for %s", url)
@@ -84,8 +84,7 @@ class Spider:
                 return response.text()
             # else:
             self.log.error("No response received: %s", url)
-            return ""  # noqa: TRY300
-
+            return ""
         except Exception:
             self.log.exception("Request failed for %s", url)
             return ""
